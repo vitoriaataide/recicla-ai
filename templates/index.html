@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Separador Inteligente de Recicláveis</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>♻️ Separador Inteligente de Lixo</h1>
+
+        <p>Envie uma imagem de um resíduo para identificar sua categoria.</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="imagem" accept="image/*" required>
+            <button type="submit">Classificar imagem</button>
+        </form>
+
+        {% if resultado %}
+        <div class="resultado">
+            <h2>Resultado da classificação</h2>
+            <p><strong>Classe:</strong> {{ resultado }}</p>
+            <p><strong>Confiança:</strong> {{ "%.2f"|format(confianca) }}%</p>
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
