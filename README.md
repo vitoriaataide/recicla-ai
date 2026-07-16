@@ -58,6 +58,34 @@ dataset/
 ```
 ---
 
+## Execute a aplicação
+
+Inicie o servidor Flask:
+
+```bash
+python app.py
+```
+
+O sistema estará disponível em:
+
+```text
+http://127.0.0.1:5000
+```
+
+---
+
+## Utilizando o sistema
+
+1. Acesse a aplicação pelo navegador.
+2. Selecione uma imagem de um resíduo reciclável.
+3. Clique em **Classificar**.
+4. O sistema exibirá:
+   - ♻️ Categoria identificada;
+   - 📊 Nível de confiança da previsão.
+
+---
+
+
 ## 🛠 Tecnologias
 
 - Python

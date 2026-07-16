@@ -3,10 +3,21 @@ import tensorflow as tf
 import numpy as np
 import os
 from tensorflow.keras.preprocessing import image
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 app = Flask(__name__)
 
-model = tf.keras.models.load_model("modelo_reciclagem.h5")
+model = tf.keras.models.load_model(BASE_DIR / "notebooks/modelo_reciclagem.h5")
+
+app = Flask(
+    __name__,
+    template_folder=str(BASE_DIR / "templates"),
+    static_folder=str(BASE_DIR / "static")
+)
+
+UPLOAD_FOLDER = BASE_DIR / "static"
 
 classes = {
     0: "Papel/Papelão",
@@ -24,7 +35,7 @@ def index():
         arquivo = request.files["imagem"]
 
         if arquivo:
-            caminho = os.path.join("static", arquivo.filename)
+            caminho = UPLOAD_FOLDER / arquivo.filename
             arquivo.save(caminho)
 
             img = image.load_img(caminho, target_size=(224, 224))
