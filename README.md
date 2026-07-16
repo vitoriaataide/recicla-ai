@@ -1,21 +1,12 @@
-# recicla-ai
+# Recicla-AI ♻️
 
-Sistema de Inteligência Artificial para classificação automática de resíduos recicláveis utilizando Visão Computacional.
+Sistema de Inteligência Artificial para classificação automática de resíduos recicláveis utilizando Visão Computacional e Deep Learning.
 
-## 📖 Sobre o projeto
+## 📖 Sobre o Projeto
 
-O Recicla-AI é um projeto desenvolvido para a disciplina de Inteligência Artificial.
+O **Recicla-AI** é um projeto desenvolvido para a disciplina de Inteligência Artificial. Seu principal objetivo é identificar automaticamente o tipo de resíduo reciclável presente em uma imagem, auxiliando e otimizando processos de triagem, coleta seletiva e reciclagem.
 
-Seu objetivo é identificar automaticamente o tipo de resíduo reciclável presente em uma imagem, auxiliando processos de coleta seletiva e reciclagem.
-
-As categorias identificadas pelo sistema são:
-
-- 📄 Papel
-- 🧴 Plástico
-- 🍾 Vidro
-- 🥫 Metal
-
----
+O sistema utiliza técnicas de **Transfer Learning (Aprendizado por Transferência)** baseadas na arquitetura **MobileNetV2**, alcançando alta precisão mesmo com um conjunto de dados otimizado.
 
 ## 🎯 Objetivos
 
@@ -24,6 +15,47 @@ As categorias identificadas pelo sistema são:
 - Aplicar técnicas de Visão Computacional.
 - Desenvolver uma aplicação prática utilizando Inteligência Artificial.
 
+### Categorias de Resíduos Suportadas:
+- 📄 **Papel / Papelão** (`cardboard`)
+- 🧴 **Plástico** (`plastic`)
+- 🍾 **Vidro** (`glass`)
+- 🥫 **Metal** (`metal`)
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+- **Linguagem:** Python
+- **Deep Learning & IA:** TensorFlow, Keras, Scikit-Learn
+- **Manipulação de Imagens:** OpenCV, Pillow
+- **Web & Interface:** Flask, HTML, CSS
+- **Visualização de Dados:** Matplotlib, Pandas
+- **Ferramentas de Desenvolvimento:** Jupyter Notebook
+
+---
+
+## 📁 Estrutura do Dataset
+
+Para treinar e testar o modelo, o projeto espera que as imagens estejam organizadas na raiz do projeto dentro de uma pasta chamada `dataset/`, dividida da seguinte forma:
+
+```text
+dataset/
+├── train/              # Imagens utilizadas para o treino (com Data Augmentation)
+│   ├── cardboard/
+│   ├── glass/
+│   ├── metal/
+│   └── plastic/
+├── validation/         # Imagens utilizadas para validação durante o treino
+│   ├── cardboard/
+│   ├── glass/
+│   ├── metal/
+│   └── plastic/
+└── test/               # Imagens para o teste e avaliação final do modelo
+    ├── cardboard/
+    ├── glass/
+    ├── metal/
+    └── plastic/
+```
 ---
 
 ## 🛠 Tecnologias
@@ -36,32 +68,6 @@ As categorias identificadas pelo sistema são:
 - Flask
 - HTML
 - CSS
-
----
-
-## 📁 Estrutura do projeto
-
-```text
-recicla-ai/
-│
-├── app/
-├── data/
-├── docs/
-├── models/
-├── notebooks/
-├── src/
-├── tests/
-│
-├── README.md
-├── requirements.txt
-└── .gitignore
-```
-
----
-
-## 🚀 Como executar
-
-Em breve.
 
 ---
 
